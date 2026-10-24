@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">My<span>Profile</span></a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="skills.html">Skills</a>
+            <a href="gallery.html">Gallery</a>
+            <a class="active" href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="page-heading">
+            <p class="eyebrow">LET'S CONNECT</p>
+            <h1>Contact <span>Me</span></h1>
+            <p>This page contains example contact details and a simple form. Replace the sample details before submitting your assignment.</p>
+        </section>
+
+        <section class="contact-layout">
+            <div class="contact-info">
+                <h2>My details</h2>
+                <p><strong>Email</strong><br>yourname@example.com</p>
+                <p><strong>Location</strong><br>Indonesia</p>
+                <p><strong>Interests</strong><br>Technology, games, and creative projects</p>
+                <p class="small-note">Use a safe contact address. You don't need to publish your home address or private phone number.</p>
+            </div>
+
+            <form class="contact-form" action="#" method="get">
+                <h2>Send a message</h2>
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="topic">What is this about?</label>
+                <select id="topic" name="topic">
+                    <option value="hello">Just saying hello</option>
+                    <option value="project">A project</option>
+                    <option value="question">A question</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                <button class="button" type="submit">Submit message</button>
+                <p class="small-note">Demo form only: it does not send messages to an email inbox.</p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
