@@ -7,6 +7,12 @@
     --paper: #ffffff;
     --background: #f7f8fc;
     --border: #e5e8f0;
+    --art-background: #e8edff;
+    --gallery-background: #edf0ff;
+    --input-background: #ffffff;
+    --note-background: #fff8e7;
+    --note-text: #49536b;
+    --track-background: #e9ecf5;
 }
 
 * {
@@ -68,6 +74,21 @@ nav a.active {
     background: var(--soft);
 }
 
+.theme-toggle {
+    flex-shrink: 0;
+    padding: 8px 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--soft);
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+}
+
 main {
     width: min(1120px, 90%);
     margin: 0 auto;
@@ -112,7 +133,7 @@ h2 {
 
 .hero-art {
     padding: 20px;
-    background: #e8edff;
+    background: var(--art-background);
     border-radius: 28px;
 }
 
@@ -276,7 +297,8 @@ h2 {
     margin-top: 24px;
     padding: 16px 18px;
     color: #49536b;
-    background: #fff8e7;
+    background: var(--note-background);
+    color: var(--note-text);
     border-left: 4px solid #e9b949;
     border-radius: 7px;
 }
@@ -289,7 +311,7 @@ h2 {
     height: 8px;
     margin: 16px 0 5px;
     overflow: hidden;
-    background: #e9ecf5;
+    background: var(--track-background);
     border-radius: 20px;
 }
 
@@ -324,7 +346,7 @@ h2 {
     height: 230px;
     object-fit: contain;
     padding: 18px;
-    background: #edf0ff;
+    background: var(--gallery-background);
 }
 
 .gallery-item figcaption {
@@ -376,7 +398,7 @@ h2 {
     padding: 11px 12px;
     border: 1px solid #d6dbe7;
     border-radius: 8px;
-    background: white;
+    background: var(--input-background);
     color: var(--ink);
     font: inherit;
 }
@@ -411,10 +433,52 @@ footer p {
     margin: 0;
 }
 
+/* Dark mode: JavaScript adds this class to the body. */
+body.dark-mode {
+    --ink: #e7eaf2;
+    --muted: #b0b8ca;
+    --accent: #9aabff;
+    --accent-dark: #bdc7ff;
+    --soft: #303954;
+    --paper: #202635;
+    --background: #151a24;
+    --border: #353d50;
+    --art-background: #2b3450;
+    --gallery-background: #2b3450;
+    --input-background: #252d3d;
+    --note-background: #3b3425;
+    --note-text: #f1dfb7;
+    --track-background: #3a4358;
+}
+
+body,
+.site-header,
+.card,
+.intro-card,
+.hobby-card,
+.gallery-item,
+.contact-info,
+.contact-form,
+footer,
+.hero-art,
+.gallery-item img,
+.hobby-card img,
+.note,
+.theme-toggle,
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
 @media (max-width: 760px) {
     .site-header {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .theme-toggle {
+        align-self: center;
     }
 
     nav {
