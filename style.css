@@ -535,3 +535,64 @@ footer,
         padding: 20px;
     }
 }
+
+/* Shopping Calculator */
+.calculator {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+.calculator h1,
+.calculator > p {
+    text-align: center;
+}
+
+.calculator form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calculator label {
+    font-weight: bold;
+}
+
+.calculator input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.calculator button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.calculator button:hover {
+    opacity: 0.8;
+}
+
+.calculator-result {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #222;
+}
+
+.calculator-result h2 {
+    text-align: center;
+}
+
+.calculator-result h3 {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
