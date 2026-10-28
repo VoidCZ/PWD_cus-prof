@@ -22,3 +22,61 @@ themeToggle.addEventListener("click", function () {
 });
 
 updateThemeButton();
+
+const shoppingForm = document.getElementById("shoppingForm");
+
+if (shoppingForm) {
+    shoppingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const price = Number(document.getElementById("itemPrice").value);
+        const quantity = Number(document.getElementById("quantity").value);
+        const shipping = Number(document.getElementById("shipping").value);
+        const discount = Number(document.getElementById("discount").value);
+
+        if (
+            !Number.isFinite(price) ||
+            !Number.isFinite(quantity) ||
+            !Number.isFinite(shipping) ||
+            !Number.isFinite(discount) ||
+            price < 0 ||
+            quantity < 1 ||
+            !Number.isInteger(quantity) ||
+            shipping < 0 ||
+            discount < 0 ||
+            discount > 100
+        ) {
+            alert("Please enter valid shopping details.");
+            return;
+        }
+
+        const subtotal = price * quantity;
+        const discountAmount = subtotal * (discount / 100);
+        const finalTotal = subtotal - discountAmount + shipping;
+
+        const rupiah = new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0
+        });
+
+        document.getElementById("subtotal").textContent =
+            rupiah.format(subtotal);
+
+        document.getElementById("discountAmount").textContent =
+            rupiah.format(discountAmount);
+
+        document.getElementById("shippingCost").textContent =
+            rupiah.format(shipping);
+
+        document.getElementById("finalTotal").textContent =
+            rupiah.format(finalTotal);
+    });
+
+    shoppingForm.addEventListener("reset", function () {
+        document.getElementById("subtotal").textContent = "Rp0";
+        document.getElementById("discountAmount").textContent = "Rp0";
+        document.getElementById("shippingCost").textContent = "Rp0";
+        document.getElementById("finalTotal").textContent = "Rp0";
+    });
+}
